@@ -66,12 +66,8 @@ $('#checklog').click(function(){
 		console.log("error");
 	}
 	else if($('#password-input')[0].value=="test"&&$('#login-input')[0].value=="test"){
-		let name = "login";
-		let value = $('#login-input')[0].value;
-		document.cookie = "user=John; path=/;";
-		alert(document.cookie);
-		console.log(document.cookie);
-		//window.location.href = 'frontbook.html';
+		document.cookie = "login="+$('#login-input')[0].value+"; path=/;";
+		window.location.href = 'frontbook.html';
 	}
 	else{alert("Проверьте правильность введенных данных!")}
 	
