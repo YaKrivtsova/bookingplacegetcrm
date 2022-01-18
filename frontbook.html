@@ -58,7 +58,7 @@
 		<div class="place-v" id="place2" style="display:inline-block;margin-top:7px">2</div>
 		<div class="place-h" id="place3" style="display:inline-block;margin-top:7px; margin-left:15px">3</div>
         <div class="place-h" id="place4" style="display:inline-block; margin-top:5px; margin-left:15px">4</div>
-		<div class="place-v" id="place6" style="display:inline-block;margin-top:12px; margin-left:15px">6</div>
+		<div class="place-v" id="place6" style="display:inline-block;margin-top:12px; margin-left:15px; background:red">6</div>
 		<div class="place-v" id="place5" style="display:inline-block;margin-top:12px">5</div>
 	</div>
 </div>
@@ -91,8 +91,14 @@ var request = new XMLHttpRequest;
 request.open('GET', 'https://bookingplacegetcrm.herokuapp.com/test.txt', true);
 request.onload = function () {
  try {
-       const obj = JSON.parse(request.responseText);
-	   console.log(obj);
+       //const obj = JSON.parse(request.responseText);
+	   const obj = JSON.parse("{\"blocked\":[ 6, 5, 3]}");
+	   
+	   console.log(obj.blocked.lengh);
+	   for (var i=0; i++;i<obj.blocked.lengh)
+	   {
+			console.log(obj.blocked[i]);
+	   }
     } catch (e) {
         console.log("некорректный json");
 		
@@ -100,8 +106,22 @@ request.onload = function () {
 
     
 };
+try {
+       //const obj = JSON.parse(request.responseText);
+	   const obj = JSON.parse("{\"blocked\":[ 6, 5, 3]}");
+	   var blocked= obj.blocked;
+	   for (const property in blocked) 
+	   {
+			var element = document.getElementById("place"+blocked[property]);
+			 $(element)[0].style.backgroundColor = '#ec9191';
+			
+	   }
+    } catch (e) {
+        console.log("некорректный json");
+		
+    }
 
-request.send(null);
+//request.send(null);
 </script>
 </body>
 </html>
