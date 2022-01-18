@@ -20,3 +20,28 @@ $('#forgotten').click(function(){
     $("#forgotten-container").fadeIn();
   });
 });
+$('#checklog').click(function(){
+	if($('#password-input')[0].value==""&&$('#login-input')[0].value==""){
+		alert("Login и Пароль не может быть пустым!")
+	}
+	else if($('#login-input')[0].value=="")
+	{
+		alert("Login не может быть пустым!")
+		console.log("error");
+	}
+	else if($('#password-input')[0].value=="")
+	{
+		alert("Пароль не может быть пустым!")
+		console.log("error");
+	}
+	else if($('#password-input')[0].value=="test"&&$('#login-input')[0].value=="test"){
+		
+		let name = $('#login-input')[0].value;
+		//document.cookie = encodeURIComponent(name)
+		console.log(document.cookie);
+		//window.location.href = 'frontbook.html';
+	}
+	else{alert("Проверьте правильность введенных данных!")}
+	
+	
+});

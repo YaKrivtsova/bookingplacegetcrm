@@ -82,7 +82,7 @@ h1{
 
 /* Inputs */
 a,
-input{
+input, button{
   font-family: 'Open Sans Condensed', sans-serif;
   text-decoration: none;
   position: relative;
