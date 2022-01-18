@@ -20,3 +20,8 @@ $('#forgotten').click(function(){
     $("#forgotten-container").fadeIn();
   });
 });
+
+
+function test(){
+	$('#exampleModal').modal('show')
+}

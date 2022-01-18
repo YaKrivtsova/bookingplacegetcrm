@@ -7,14 +7,21 @@
     <link rel="stylesheet" href="css/style.css">
 	<script src="js/jquery-3.3.1.min.js"></script>
 	<script src="js/index.js"></script>
+	<script src="js/bootstrap-datepicker.min.js"></script>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="js/bootstrap-datepicker.min.js"></script>
     <title>Резервирование места в офисе</title>
 </head>
 <body style=" margin:0px">
 <div style="background-color:white;position: absolute;max-width: 94%; margin: 3% 3%;height: 100%;width: 100%; max-height: 89%;opacity: 0.8;">
 <div class="scale" id="small-office">
-<div class="place-h" id="place29" style="display:inline-block;margin-top:5px; margin-left:15px">29</div>
-<div class="place-h" id="place30" style="display:inline-block; margin-top:5px">30</div>
-<div class="place-h" id="place27" style="display:inline-block; margin-top:1px;margin-left:15px">27</div>
+<div class="place-h" onclick="order(this)" id="place.29" style="display:inline-block;margin-top:5px; margin-left:15px">29</div>
+<div class="place-h" onclick="order()" id="place30" style="display:inline-block; margin-top:5px">30</div>
+<div class="place-h" onclick="order()" id="place27" style="display:inline-block; margin-top:1px;margin-left:15px">27</div>
 <div class="place-h" id="place28" style="display:inline-block; margin-top:1px;">28</div>
 <div class="place-h" id="place25" style="display:inline-block;margin-top:5px; margin-left:15px">25</div>
 <div class="place-h" id="place26" style="display:inline-block; margin-top:5px">26</div>
@@ -25,32 +32,32 @@
 	<div  id="bc-hall" style="text-align:center"><span style="vertical-align: sub;">Коридор</span></div>
 	<div class="scale" id="kitchen"> 
 	<div id="meeting-place" style="display:inline-block;">
-		<div class="place-v" id="place24" style="margin: auto; margin-top: 18px;">21</div>
+		<div class="place-v" id="place21" style="margin: auto; margin-top: 18px;">21</div>
 	</div>
-	<div class="place-v" id="place23" style="display:inline-block;margin-top:10px;float: right; margin-right:10px;">23</div>
+	<div class="place-v" id="place22" style="display:inline-block;margin-top:10px;float: right; margin-right:10px;">22</div>
 	</div>
 	<div  id="big-office">
 	<div class="scale" id="big-office-part1">
-		<div class="place-h" id="place25" style="vertical-align: top;display:inline-block;margin-top:5px; margin-left:15px">19</div>
-        <div class="place-h" id="place26" style="vertical-align: top;display:inline-block; margin-top:5px; margin-left:15px">20</div>
+		<div class="place-h" id="place19" style="vertical-align: top;display:inline-block;margin-top:5px; margin-left:15px">19</div>
+        <div class="place-h" id="place20" style="vertical-align: top;display:inline-block; margin-top:5px; margin-left:15px">20</div>
 		
 		<div style="width:0px; height:60px;display:inline-block;margin-left:58px; border:1px solid; background: black;margin-top: -1px; "></div>
-		<div class="place-v" id="place23" style="display:inline-block;margin-top:5px; margin-right:15px;float: right; ">8</div>
-		<div class="place-v" id="place24" style="display:inline-block;margin-top:5px;float: right">7</div>
+		<div class="place-v" id="place8" style="display:inline-block;margin-top:5px; margin-right:15px;float: right; ">8</div>
+		<div class="place-v" id="place7" style="display:inline-block;margin-top:5px;float: right">7</div>
 		<div style="width:0px; height:60px;float: right; display:inline-block;margin-right:37px; border:1px solid; background: black;margin-top: -1px; "></div>
 		<div></div>
-		<div class="place-h" id="place26" style="vertical-align: top;display:inline-block;margin-top:-15px; margin-left:15px">18</div>
+		<div class="place-h" id="place18" style="vertical-align: top;display:inline-block;margin-top:-15px; margin-left:15px">18</div>
 		<div style="height:1px"></div>
-		<div class="place-v" id="place23" style="display:inline-block;margin-top:5px; margin-right:15px;float: right; ">10</div>
-		<div class="place-v" id="place23" style="display:inline-block;margin-top:5px; float: right; ">9</div>
-		<div class="place-v" id="place23" style="display:inline-block;margin-top:5px; float: left; margin-left:70px">13</div>
-		<div class="place-v" id="place23" style="display:inline-block;margin-top:5px; float: left;">14</div>
+		<div class="place-v" id="place10" style="display:inline-block;margin-top:5px; margin-right:15px;float: right; ">10</div>
+		<div class="place-v" id="place9" style="display:inline-block;margin-top:5px; float: right; ">9</div>
+		<div class="place-v" id="place13" style="display:inline-block;margin-top:5px; float: left; margin-left:70px">13</div>
+		<div class="place-v" id="place14" style="display:inline-block;margin-top:5px; float: left;">14</div>
 		<div  style="display:inline-block;width:215px;height: 53px;"></div>
-		<div class="place-v" id="place23" style="display:inline-block; margin-right:15px;float: right; ">12</div>
-		<div class="place-v" id="place23" style="display:inline-block; float: right; ">11</div>
-		<div class="place-v" id="place23" style="display:inline-block;float: left; margin-left:5px;margin-right: 43px;">17</div>
-		<div class="place-v" id="place23" style="display:inline-block; float: left;">15</div>
-		<div class="place-v" id="place23" style="display:inline-block; float: left;">16</div>
+		<div class="place-v" id="place12" style="display:inline-block; margin-right:15px;float: right; ">12</div>
+		<div class="place-v" id="place11" style="display:inline-block; float: right; ">11</div>
+		<div class="place-v" id="place17" style="display:inline-block;float: left; margin-left:5px;margin-right: 43px;">17</div>
+		<div class="place-v" id="place15" style="display:inline-block; float: left;">15</div>
+		<div class="place-v" id="place16" style="display:inline-block; float: left;">16</div>
 		
 	</div>
 	<div class="scale" id="big-office-part2">
@@ -66,7 +73,7 @@
 <div  class="scale" id="middle-office"> 
 	<div  id="middle-office-part1">
 		<div class="place-h blocked" style="display:inline-block;margin-top:5px!important; vertical-align: top; margin-left:15px"></div>
-		<div class="place-h blocked" id="place31" style="display:inline-block; margin-top:15px">31</div>
+		<div class="place-h " id="place31" style="display:inline-block; margin-top:15px">31</div>
 		<div class="place-h" id="place32" style="display:inline-block; margin-top:15px">32</div>
 		<div class="place-h blocked" style="display:inline-block;margin-top:5px!important; vertical-align: top;"></div>
 		<div style="height:40px"></div>
@@ -86,7 +93,33 @@
 	</div>
 </div>
 </div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Бронирование места</h5>
+        <button type="button" class="close" style="max-width: 69px;"data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group" style="display:inline-block">
+                    <label for="FromDate">Дата бронирования</label>
+                    <input type="datetime" class="form-control date-form" name="FromDate" style="width:100px" placeholder="">
+		</div>
+		<div id="placenum"style="display:inline-block"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button"style="display:inline-block;width: 47%;" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+        <button type="button" onclick="save()"style="display:inline-block;width: 47%;" class="btn btn-primary">Забронировать</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
+let placeId=0;
 var request = new XMLHttpRequest;
 request.open('GET', 'https://bookingplacegetcrm.herokuapp.com/test.txt', true);
 request.onload = function () {
@@ -108,7 +141,7 @@ request.onload = function () {
 };
 try {
        //const obj = JSON.parse(request.responseText);
-	   const obj = JSON.parse("{\"blocked\":[ 6, 5, 3]}");
+	   const obj = JSON.parse("{\"blocked\":[ 6, 5, 3, 1, 2, 7,8,9,11,13,14,16,18,19,20,21,22,27,28,32]}");
 	   var blocked= obj.blocked;
 	   for (const property in blocked) 
 	   {
@@ -120,8 +153,21 @@ try {
         console.log("некорректный json");
 		
     }
-
+ $(".date-form").datepicker({
+            format: 'dd.mm.yyyy'
+        });
 //request.send(null);
+function order(element){
+$('#exampleModal').modal('show')
+console.log(document.getElementById('placenum'))
+placeId=element.id.split('.')[1];
+$(document.getElementById('placenum')).html('Место <span id="'+element.id.split('.')[1]+'">'+element.id.split('.')[1]+'</span>')
+}
+function save()
+{
+$('#exampleModal').modal('hide')
+ console.log(placeId)
+}
 </script>
 </body>
 </html>

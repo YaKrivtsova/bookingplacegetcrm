@@ -290,12 +290,21 @@ a:hover{
 	margin-top: -1PX;
 	
 }
+.place-v, .place-h {
+  cursor: default;
+}
+
+.blocked
+{
+	background:white!important;
+}
 .place-h
 {
 	border: 1px solid black;
 	height:20px;
 	width: 50px;
 	text-align:center;
+	background:#59b059;
 }
 .place-v
 {
@@ -303,6 +312,7 @@ a:hover{
 	width:20px;
 	height: 50px;
 	text-align:center;
+	background:#59b059;
 }
 .scale:hover
 {
