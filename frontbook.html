@@ -92,11 +92,13 @@ request.open('GET', 'https://bookingplacegetcrm.herokuapp.com/test.txt', true);
 request.onload = function () {
  try {
        const obj = JSON.parse(request.responseText);
+	   console.log(obj);
     } catch (e) {
         console.log("некорректный json");
+		
     }
 
-    console.log(obj);
+    
 };
 
 request.send(null);
