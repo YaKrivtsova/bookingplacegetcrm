@@ -6,35 +6,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
 	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/index.js"></script>
     <title>Резервирование места в офисе</title>
 </head>
 <body style=" margin:0px">
 <div style="background-color:white;position: absolute;max-width: 94%; margin: 3% 3%;height: 100%;width: 100%; max-height: 89%;opacity: 0.8;">
-<div id="small-office">
-Это маленький офис
-
+<div class="scale" id="small-office">
+<div class="place-h" id="place29" style="display:inline-block;margin-top:5px; margin-left:15px">29</div>
+<div class="place-h" id="place30" style="display:inline-block; margin-top:5px">30</div>
+<div class="place-h" id="place27" style="display:inline-block; margin-top:1px;margin-left:15px">27</div>
+<div class="place-h" id="place28" style="display:inline-block; margin-top:1px;">28</div>
+<div class="place-h" id="place25" style="display:inline-block;margin-top:5px; margin-left:15px">25</div>
+<div class="place-h" id="place26" style="display:inline-block; margin-top:5px">26</div>
+<div class="place-v" id="place23" style="display:inline-block;margin-top:7px; margin-left:15px">23</div>
+<div class="place-v" id="place24" style="display:inline-block; margin-top:7px">24</div>
 </div>
 <div id="hall-big-office">
-	<div id="bc-hall"> Это коридор</div>
-	<div id="kitchen"> Кухня и переговорка</div>
-	<div id="big-office">
-	<div id="big-office-part1">
-	 1 часть
+	<div  id="bc-hall" style="text-align:center"><span style="vertical-align: sub;">Коридор</span></div>
+	<div class="scale" id="kitchen"> 
+	<div id="meeting-place" style="display:inline-block;">
+		<div class="place-v" id="place24" style="margin: auto; margin-top: 18px;">21</div>
 	</div>
-	<div id="big-office-part2">
-	 2 часть
+	<div class="place-v" id="place23" style="display:inline-block;margin-top:10px;float: right; margin-right:10px;">23</div>
+	</div>
+	<div  id="big-office">
+	<div class="scale" id="big-office-part1">
+		<div class="place-h" id="place25" style="vertical-align: top;display:inline-block;margin-top:5px; margin-left:15px">19</div>
+        <div class="place-h" id="place26" style="vertical-align: top;display:inline-block; margin-top:5px; margin-left:15px">20</div>
+		
+		<div style="width:0px; height:60px;display:inline-block;margin-left:58px; border:1px solid; background: black;margin-top: -1px; "></div>
+		<div class="place-v" id="place23" style="display:inline-block;margin-top:5px; margin-right:15px;float: right; ">8</div>
+		<div class="place-v" id="place24" style="display:inline-block;margin-top:5px;float: right">7</div>
+		<div style="width:0px; height:60px;float: right; display:inline-block;margin-right:37px; border:1px solid; background: black;margin-top: -1px; "></div>
+		<div></div>
+		<div class="place-h" id="place26" style="vertical-align: top;display:inline-block;margin-top:-15px; margin-left:15px">18</div>
+		<div style="height:1px"></div>
+		<div class="place-v" id="place23" style="display:inline-block;margin-top:5px; margin-right:15px;float: right; ">10</div>
+		<div class="place-v" id="place23" style="display:inline-block;margin-top:5px; float: right; ">9</div>
+		<div class="place-v" id="place23" style="display:inline-block;margin-top:5px; float: left; margin-left:70px">13</div>
+		<div class="place-v" id="place23" style="display:inline-block;margin-top:5px; float: left;">14</div>
+		<div  style="display:inline-block;width:215px;height: 53px;"></div>
+		<div class="place-v" id="place23" style="display:inline-block; margin-right:15px;float: right; ">12</div>
+		<div class="place-v" id="place23" style="display:inline-block; float: right; ">11</div>
+		<div class="place-v" id="place23" style="display:inline-block;float: left; margin-left:5px;margin-right: 43px;">17</div>
+		<div class="place-v" id="place23" style="display:inline-block; float: left;">15</div>
+		<div class="place-v" id="place23" style="display:inline-block; float: left;">16</div>
+		
+	</div>
+	<div class="scale" id="big-office-part2">
+		<div class="place-v" id="place23" style="display:inline-block;margin-top:7px; margin-left:15px">1</div>
+		<div class="place-v" id="place24" style="display:inline-block;margin-top:7px">2</div>
+		<div class="place-h" id="place25" style="display:inline-block;margin-top:7px; margin-left:15px">3</div>
+        <div class="place-h" id="place26" style="display:inline-block; margin-top:5px; margin-left:15px">4</div>
+		<div class="place-v" id="place23" style="display:inline-block;margin-top:12px; margin-left:15px">6</div>
+		<div class="place-v" id="place24" style="display:inline-block;margin-top:12px">5</div>
 	</div>
 </div>
 </div>
-<div id="middle-office"> 
-<div id="middle-office-part1">
-	 1 часть
+<div  class="scale" id="middle-office"> 
+	<div  id="middle-office-part1">
+		<div class="place-h blocked" style="display:inline-block;margin-top:5px!important; vertical-align: top; margin-left:15px"></div>
+		<div class="place-h blocked" id="place31" style="display:inline-block; margin-top:15px">31</div>
+		<div class="place-h" id="place32" style="display:inline-block; margin-top:15px">32</div>
+		<div class="place-h blocked" style="display:inline-block;margin-top:5px!important; vertical-align: top;"></div>
+		<div style="height:40px"></div>
+		<div class="place-h blocked" style="display:inline-block;margin-top:10px!important; vertical-align: top; margin-left:15px"></div>
+		<div class="place-v blocked" style="display:inline-block;margin-top:-20px; margin-left:15px; vertical-align: top; float: right; margin-right:10px;"></div>
 	</div>
-	<div id="middle-office-part2">
-	 2 часть
+	<div  id="middle-office-part2">
+		<div class="place-v blocked" style="display:inline-block;margin-top:7px; margin-left:15px"></div>
+		<div class="place-v blocked" style="display:inline-block; margin-top:7px; margin-right:10px; float: right;"></div>
+		<div style="height:5px"></div>
+		<div class="place-v blocked" style="display:inline-block;margin-top:7px; margin-left:15px"></div>
+		<div class="place-v blocked" style="display:inline-block; margin-top:7px; margin-right:10px; float: right;"></div>
+		<div style="height:5px"></div>
+		<div class="place-v blocked" style="display:inline-block;margin-top:7px; margin-left:15px"></div>
+		<div class="place-h blocked" style="display:inline-block; margin-top:1px; margin-left:22px; "></div>
+		<div class="place-v blocked" style="display:inline-block; margin-top:7px; margin-right:10px; float: right;"></div>
 	</div>
 </div>
 </div>
+<script>
+console.log(window.screen.width);
+console.log(window.screen.height);
+var request = new XMLHttpRequest;
 
+request.open('GET', https://bookingplacegetcrm.herokuapp.com/+'test.txt', true);
+
+request.onload = function () {
+    console.log(request.responseText);
+};
+
+request.send(null);
+</script>
 </body>
 </html>

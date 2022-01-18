@@ -211,7 +211,8 @@ a:hover{
   background: rgba(87,198,255,.5);
 }
 #small-office{
-	border: 1px solid black;
+	border-width: 1px 1px 0px 1px;
+	border-style: solid;
     height: 180px;
     width: 180px;
 	margin: 5% 10% 0;
@@ -226,7 +227,8 @@ a:hover{
 #kitchen
 {   height: 115px;
 	width: 300px;
-	border: 1px solid black;
+	border-width: 0px 1px 0px 1px;
+	border-style: solid;
 }
 #big-office
 {
@@ -248,7 +250,8 @@ a:hover{
 }
 #big-office-part2
 {
-	border: 1px solid black;
+	border-width: 1px 1px 1px 0px;
+	border-style: solid;
 	height: 300px;
 	width: 200px;
 	position: absolute;
@@ -277,11 +280,94 @@ a:hover{
 }
 #middle-office-part2
 {
-	border: 1px solid black;
+	border-width: 2px 1px 1px 1px;
+	border-style: solid;
+	border-top-color: white!important;
+	border-top-color: white!important;
 	width: 180px;
 	float:right;
 	height:275px;
+	margin-top: -1PX;
 	
+}
+.place-h
+{
+	border: 1px solid black;
+	height:20px;
+	width: 50px;
+	text-align:center;
+}
+.place-v
+{
+	border: 1px solid black;
+	width:20px;
+	height: 50px;
+	text-align:center;
+}
+.scale:hover
+{
+	transform: scale(1.2);
+	background: white;
+	z-index:100;
+	position:relative;	
+	border-width:1px!important;
+}
+.scale
+{
+	transition: .5s;
+	
+}
+#meeting-place{
+	width:200px;
+	height: 78%;
+	border-width: 1px 1px 0px 0px;
+	border-style: solid;
+	top: 25px;
+    position: relative;
+}
+#meeting-place:hover,.scale:hover #meeting-place  {
+	height: 78%;
+	border-width: 1px 1px 0px 0px;
+}
+@media screen and (max-width: 3540px) {
+  #small-office {
+    margin:  3% 10% 0;
+	height: 150px;
+    width: 150px;
+  }
+  #hall-big-office
+  {
+	  margin: 0 0 0 10%;
+  }
+  #bc-hall{
+	
+    height: 55px;
+    width: 655px;
+	}
+	#big-office-part1
+	{
+		height: 200px;
+		width: 400px;
+	}
+	#big-office-part2
+	{
+		height: 198px;
+		width: 100px;
+	}
+	#hall-big-office
+	{
+		width: 653px;
+	}
+	#middle-office-part2
+	{
+		height:200px;
+	}
+	#middle-office
+	{
+		width: 250px;
+	}
+	
+
 }
 
 
