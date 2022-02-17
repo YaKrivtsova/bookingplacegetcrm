@@ -124,8 +124,9 @@ var request = new XMLHttpRequest;
 request.open('GET', 'https://bookingplacegetcrm.herokuapp.com/test.txt', true);
 request.onload = function () {
  try {
-       //const obj = JSON.parse(request.responseText);
-	   const obj = JSON.parse("{\"blocked\":[ 6, 5, 3]}");
+       console.log('hello');
+	   const obj = JSON.parse(request.responseText);
+	   //const obj = JSON.parse("{\"blocked\":[ 6, 5, 3]}");
 	   
 	   console.log(obj.blocked.lengh);
 	   for (var i=0; i++;i<obj.blocked.lengh)
