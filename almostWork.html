@@ -4,9 +4,7 @@ let thingToPrint = "";
 var request = new XMLHttpRequest;
 
 request.open('GET', 'https://courier.yandex.ru/vrs/api/v1/log/request/bbceaa5c-b0ec7b5a-a5519ef9-de9e6dee', true);
-request.setRequestHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-request.setRequestHeader("Access-Control-Allow-Origin", "*");
-request.setRequestHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+request.setRequestHeader("Access-Control-Allow-Origin", "https://bookingplacegetcrm.herokuapp.com");
 
 request.onload = function () {
 
