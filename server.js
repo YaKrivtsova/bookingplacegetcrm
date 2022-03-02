@@ -5,7 +5,20 @@ if (request.url==='/'){
 const text=fs.readFileSync('index.html','utf8');
 response.end(text);
 };
-
+if(request.url.contains('saveJson') )
+{
+	let data = '';
+  request.on('data', chunk => {
+    data += chunk;
+  })
+  
+	
+	fs.writeFile('test.txt', data, function (err) {
+	if (err) throw err;
+	console.log('Saved!');
+	});
+	
+}
     if(request.url.startsWith("/")){
          
         // получаем путь после слеша
