@@ -239,6 +239,7 @@ request.onload = function () {
 		}
 	    
 	   }
+	   return obj;
     } catch (e) {
         console.log(e);
 		
@@ -249,7 +250,7 @@ request.send(null);
 }
 function checkDate()
 {
-	checkJson(document.getElementById('date').value)
+	obj = checkJson(document.getElementById('date').value)
 }
 </script>
 </body>
