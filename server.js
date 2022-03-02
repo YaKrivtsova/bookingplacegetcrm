@@ -5,8 +5,7 @@ console.log('Cookie: ', request.cookies);
 if(request.cookies=== undefined)
 {
 	console.log('you lose');
-	response.redirect("https://bookingplacegetcrm.herokuapp.com/index.html");
-	response.end();
+	
 }	
 if (request.url==='/'){
 const text=fs.readFileSync('index.html','utf8');
