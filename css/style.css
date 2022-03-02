@@ -6,7 +6,13 @@ html {
   background-size: cover;
   overflow: hidden;
 }
-
+#realSVG
+	{
+		width: 100%!important;
+		height:100%!important;
+		
+		
+	}
 img{
   display: block;
   margin: auto;
@@ -380,6 +386,19 @@ a:hover{
 
 }
 
+@media only screen and (max-device-width: 480px) {
+	
+	#realSVG
+	{
+		width: 100%!important;
+		height:100%!important;
+		transform: scale(0.9);
+		
+	}
+	
+	
+	
+}
 
 
 
