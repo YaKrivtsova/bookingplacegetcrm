@@ -169,6 +169,7 @@ function order(element){
 }
 function save()
 {
+console.log(obj);
 $('#exampleModal').modal('hide')
 obj.booking.find(item => item.date==document.getElementById('date').value).blocked.push(parseInt(placeId));
  console.log(obj);
