@@ -15,6 +15,7 @@ response.end(text);
 
          request.on ('end', function () {// После срабатывания конечного события сообщение анализируется в реальный формат запроса POST через querystring.parse, а затем возвращается клиенту.
 		console.log(post);
+		fs.writeFileSync("test.txt",post )
         response.end();
     });
 
