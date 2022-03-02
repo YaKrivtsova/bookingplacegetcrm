@@ -7,7 +7,19 @@ response.end(text);
 };
 	if(request.url==='/saveJson')
 	{
-		console.log('saveJson');
+		    var post = ''; // Определена переменная post для временного хранения информации тела запроса
+
+         req.on ('data', function (chunk) {// Через функцию мониторинга событий данных req, всякий раз, когда данные тела запроса получены, они добавляются в переменную post
+        post += chunk;
+    });
+
+         req.on ('end', function () {// После срабатывания конечного события сообщение анализируется в реальный формат запроса POST через querystring.parse, а затем возвращается клиенту.
+        post = querystring.parse(post);
+		console.log(post);
+        res.end();
+    });
+
+		
 	}
     else if(request.url.startsWith("/")){
          
