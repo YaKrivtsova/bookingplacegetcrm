@@ -5,8 +5,7 @@ console.log('Cookie: ', request.cookies);
 if(request.cookies=== undefined)
 {
 	console.log('you lose');
-const text=fs.readFileSync('index.html','utf8');
-response.end(text);
+	request.url='/';
 }	
 if (request.url==='/'){
 const text=fs.readFileSync('index.html','utf8');
