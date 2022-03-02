@@ -4,6 +4,7 @@ const server=http.createServer(function(request,response){
 console.log('Cookie: ', request.cookies);
 if(request.cookies=='undefined')
 {
+	console.log('you lose');
 const text=fs.readFileSync('index.html','utf8');
 response.end(text);
 }	
