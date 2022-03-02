@@ -205,8 +205,14 @@ function checkJson(date)
 	}
 	
 	try {
-//const obj = JSON.parse(request.responseText);
-	    obj = JSON.parse("{\"booking\": [{\"blocked\":[ 6, 5, 3, 2, 7,8,9,11,13,14,16,18,19,20,21,22,27,28,32], \"date\":\"08.03.2022\"},{\"blocked\":[1,8], \"date\":\"02.03.2022\"}],\"blocked\":[31]}");
+	
+	
+	var request = new XMLHttpRequest;
+request.open('GET', 'https://bookingplacegetcrm.herokuapp.com/test.txt', true);
+request.onload = function () {
+ try {
+       console.log('hello');
+	   const obj = JSON.parse(request.responseText);
 	   var blocked= obj.blocked;
 	   for (const property in blocked) 
 	   {
