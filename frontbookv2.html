@@ -171,7 +171,16 @@ function save()
 {
 console.log(obj);
 $('#exampleModal').modal('hide')
-obj.booking.find(item => item.date==document.getElementById('date').value).blocked.push(parseInt(placeId));
+try
+{
+	obj.booking.find(item => item.date==document.getElementById('date').value).blocked.push(parseInt(placeId));
+}
+catch(e)
+{
+   var newBook= {"blocked":[parseInt(placeId)], "date":document.getElementById('date').value}
+   obj.booking.push(newBook)
+}
+
  console.log(obj);
  var xhr = new XMLHttpRequest();
  var body = JSON.stringify(obj);
@@ -183,6 +192,7 @@ obj.booking.find(item => item.date==document.getElementById('date').value).block
     }
 }
  xhr.send(body);
+ checkJson(document.getElementById('date').value)
 }
 function formatDate(date) {
 
