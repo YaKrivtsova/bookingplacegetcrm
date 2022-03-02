@@ -14,7 +14,7 @@ response.end(text);
     });
 
          request.on ('end', function () {// После срабатывания конечного события сообщение анализируется в реальный формат запроса POST через querystring.parse, а затем возвращается клиенту.
-		console.log(JSON.parse(post));
+		console.log(post);
         response.end();
     });
 
