@@ -165,7 +165,16 @@ document.addEventListener("DOMContentLoaded", checkJson(formatDate(new  Date()))
 function order(element){
   $('#exampleModal').modal('show');
   placeId=element.id.split('_')[1];
-  $(document.getElementById('placenum')).html('Забронировать место <span id="'+placeId+'">'+placeId+' на '+document.getElementById('date').value +'</span>')
+  var text="";
+  if(element.style.fill=="red")
+  {
+	text='К сожалению, место '+placeId+' занято. Выберите другое место или другую дату';
+  }
+  else
+  {
+    text='Забронировать место <span id="'+placeId+'">'+placeId+' на '+document.getElementById('date').value +'</span>'
+  }
+  $(document.getElementById('placenum')).html(text')
 }
 function save()
 {
