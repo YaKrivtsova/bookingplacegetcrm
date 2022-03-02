@@ -5,8 +5,11 @@ if (request.url==='/'){
 const text=fs.readFileSync('index.html','utf8');
 response.end(text);
 };
-
-    if(request.url.startsWith("/")){
+	if(request.url==='/saveJson')
+	{
+		console.log('saveJson');
+	}
+    else if(request.url.startsWith("/")){
          
         // получаем путь после слеша
         var filePath = request.url.substr(1);
