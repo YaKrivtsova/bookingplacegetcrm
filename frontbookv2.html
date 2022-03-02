@@ -213,7 +213,7 @@ request.open('GET', 'https://bookingplacegetcrm.herokuapp.com/test.txt', true);
 request.onload = function () {
  try {
        console.log('hello');
-	   const obj = JSON.parse(request.responseText);
+	    obj = JSON.parse(request.responseText);
 	   console.log(obj);
 	   var blocked= obj.blocked;
 	   for (const property in blocked) 
