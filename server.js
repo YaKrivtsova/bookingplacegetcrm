@@ -85,7 +85,7 @@ console.log('Cookie: ', request.headers.cookie);
 		
 		}
 	}
-    else if(request.url.startsWith("/")){
+    if(request.url.startsWith("/")){
          
         // получаем путь после слеша
         var filePath = request.url.substr(1);
