@@ -5,7 +5,7 @@ console.log('Cookie: ', request.cookies);
 if(request.cookies=== undefined && request.url!='/')
 {
      console.log('you lose');
-	 
+	 console.log(request.url);
 	
 }	
 if (request.url==='/'){
