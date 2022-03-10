@@ -74,7 +74,7 @@ $('#checklog').click(function(){
 		formData.append("password", putPass); 
 		var request = new XMLHttpRequest();
 		request.open("POST", "/getUser");
-		request.send(formData);
+		request.send(JSON.stringify(formData));
 		request.setRequestHeader('Content-Type', 'multipart/form-data');
 		request.onreadystatechange = function() { // Call a function when the state changes.
 			if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
