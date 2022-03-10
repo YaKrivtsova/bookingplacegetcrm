@@ -1,8 +1,8 @@
 const http=require('http');
 const fs= require('fs');
 const server=http.createServer(function(request,response){
-console.log('Cookie: ', request.cookies);
-	if(request.cookies=== undefined && !request.url.includes('js')&& !request.url.includes('css') &&request.url!='/')
+console.log('Cookie: ', request.Cookie);
+	if(request.Cookie=== undefined && !request.url.includes('js')&& !request.url.includes('css') &&request.url!='/')
 	{
 		 console.log('you lose');
 		  console.log(request.url);
@@ -33,7 +33,11 @@ console.log('Cookie: ', request.cookies);
 	else if(request.url==='/getUser')
 	{
 		console.log('getUserInfo');
-		console.log(request.body);
+		var post="";
+		request.on('data', function (chunk) {// Через функцию мониторинга событий данных req, всякий раз, когда данные тела запроса получены, они добавляются в переменную post
+        post += chunk;
+		});
+		console.log(post);
 		try{
 			const text=fs.readFileSync('users.txt');
 			var users= JSON.parse(text).users;
