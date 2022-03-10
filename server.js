@@ -53,9 +53,11 @@ console.log('Cookie: ', request.headers.cookie);
 			console.log(putLogin+" "+putPass);
 			for (const property in users) 
 			   {
+				   
 					var passwordU = users[property].passwordU;
 					var login = users[property].login;
-					if(putPass===passwordU&&login===putLogin)
+					console.log(login+" "+passwordU);
+					if(putPass==passwordU&&login==putLogin)
 					{
 						found=true;
 						break;
