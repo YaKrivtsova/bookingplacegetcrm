@@ -5,6 +5,7 @@ console.log('Cookie: ', request.cookies);
 if(request.cookies=== undefined && !request.url.includes('js')&& !request.url.includes('js') &&request.url!='/')
 {
      console.log('you lose');
+	  console.log(request.url);
 	 // response.statusCode = 302;
      // response.setHeader("Location", "/");
 	
