@@ -33,6 +33,7 @@ console.log('Cookie: ', request.cookies);
 	else if(request.url==='/getUser')
 	{
 		console.log('getUserInfo');
+		console.log(request.body);
 		try{
 			const text=fs.readFileSync('users.txt');
 			var users= JSON.parse(text).users;
