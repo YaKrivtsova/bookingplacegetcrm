@@ -65,9 +65,23 @@ $('#checklog').click(function(){
 		alert("Пароль не может быть пустым!")
 		console.log("error");
 	}
-	else {
-		document.cookie = "login="+$('#login-input')[0].value+";password="+$('#password-input')[0].value+" path=/;";
-		console.log(document.cookie);
+	else 
+	{
+		putPass=$('#password-input')[0].value;
+		putLogin=$('#login-input')[0].value;
+		var formData = new FormData();
+		formData.append("login", putLogin);
+		formData.append("password", putPass); 
+		var request = new XMLHttpRequest();
+		request.open("POST", "/getUser");
+		request.send(formData);
+		request.setRequestHeader('Content-Type', 'multipart/form-data');
+		request.onreadystatechange = function() { // Call a function when the state changes.
+			if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+				console.log('all good');
+			}
+			else{alert("Пользователь не найден!")}
+		}
 		//window.location.href = 'frontbookv2.html';
 	}
 	

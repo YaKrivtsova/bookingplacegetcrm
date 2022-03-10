@@ -1,0 +1,33 @@
+{
+    users:
+    [{
+            id: 1,
+            firstName: "Анджелина",
+            lastName: "Джоли",
+            phone: "0-000-000-00-00",
+            skype: "aJolie",
+            login: "aJolie",
+            passwordU: "0000",
+            pic: "/usersPic/dzholi.jpg"
+        }, {
+            id: 2,
+            firstName: "Брэд",
+            lastName: "Питт",
+            phone: "1-111-000-00-00",
+            skype: "bpitt",
+            login: "bpitt",
+            passwordU: "1111",
+            pic: "/usersPic/brad.jpg"
+        }, {
+            id: 3,
+            firstName: "Сокджин",
+            lastName: "Ким",
+            phone: "1-111-111-00-00",
+            skype: "kjin",
+            login: "kjin",
+            passwordU: "2222",
+            pic: "/usersPic/jin.jpg"
+        }
+
+    ]
+}
