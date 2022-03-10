@@ -6,8 +6,8 @@ console.log('Cookie: ', request.cookies);
 	{
 		 console.log('you lose');
 		  console.log(request.url);
-		  response.statusCode = 302;
-		  response.setHeader("Location", "/");
+		  // response.statusCode = 302;
+		  // response.setHeader("Location", "/");
 		
 	}	
 	if (request.url==='/'){
@@ -32,6 +32,7 @@ console.log('Cookie: ', request.cookies);
 	}
 	else if(request.url==='/getUser')
 	{
+		console.log('getUserInfo');
 		try{
 			const text=fs.readFileSync('users.txt');
 			var users= JSON.parse(text).users;
@@ -60,6 +61,7 @@ console.log('Cookie: ', request.cookies);
 				 response.statusCode = 302;
 				 response.cookies="login="+putLogin+";password="+putPass+" path=/;";
 				 response.setHeader("Location", "/frontbookv2");
+				 response.end();
 			}
 		}
 		catch(e)
@@ -67,6 +69,7 @@ console.log('Cookie: ', request.cookies);
 			console.log(e);
 			response.statusCode = 302;
 		    response.setHeader("Location", "/");
+			response.end();
 		
 		}
 	}

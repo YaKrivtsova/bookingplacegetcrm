@@ -1,5 +1,4 @@
-{
-    "users":
+{"users":
     [{
             "id": 1,
             "firstName": "Анджелина",
