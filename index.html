@@ -70,7 +70,7 @@ $('#checklog').click(function(){
 		putPass=$('#password-input')[0].value;
 		putLogin=$('#login-input')[0].value;
 		document.cookie = "login="+putLogin+"; path=/; ";
-		document.cookie= "password="+putPass+";
+		document.cookie= "password="+putPass+";"
 		var data =
 		{
 			"login": putLogin,
