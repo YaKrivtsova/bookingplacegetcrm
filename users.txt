@@ -19,7 +19,7 @@
             "pic": "/usersPic/brad.jpg"
         }, {
             "id": 3,
-            "firstName":: "Сокджин",
+            "firstName": "Сокджин",
             "lastName": "Ким",
             "phone": "1-111-111-00-00",
             "skype": "kjin",
