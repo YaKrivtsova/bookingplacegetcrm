@@ -38,11 +38,14 @@ console.log('Cookie: ', request.headers.cookie);
 			const text=fs.readFileSync('users.txt');
 			var users= JSON.parse(text).users;
 			var found=false;
+			var putLogin=request.headers.cookie.match(/login=(.+?)(;|$)/);
+			var putPass=request.headers.cookie.match(/login=(.+?)(;|$)/);
+			console.log(putLogin+" "+putPass);
 			for (const property in users) 
 			   {
 					var passwordU = users[property].passwordU;
 					var login = users[property].login;
-					if(request.headers.cookie.match(/password=(.+?)(;|$)/)===passwordU&&login===request.headers.cookie.match(/login=(.+?)(;|$)/))
+					if(putPass===passwordU&&login===putLogin)
 					{
 						found=true;
 						break;
