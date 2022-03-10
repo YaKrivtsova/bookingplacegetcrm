@@ -1,7 +1,7 @@
 const http=require('http');
 const fs= require('fs');
 const server=http.createServer(function(request,response){
-console.log('Cookie: ', request.Cookie);
+console.log('Cookie: ', request.headers.cookie);
 	if(request.Cookie=== undefined && !request.url.includes('js')&& !request.url.includes('css') &&request.url!='/')
 	{
 		 console.log('you lose');
@@ -44,7 +44,6 @@ console.log('Cookie: ', request.Cookie);
 		try{
 			const text=fs.readFileSync('users.txt');
 			var users= JSON.parse(text).users;
-			console.log(users);
 			var found=false;
 			for (const property in users) 
 			   {
