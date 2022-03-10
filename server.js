@@ -59,8 +59,11 @@ console.log('Cookie: ', request.headers.cookie);
 					console.log(login+" "+passwordU);
 					if(putPass==passwordU&&login==putLogin)
 					{
+						console.log("sucsess");
 						found=true;
-						break;
+						response.statusCode = 302;
+						response.setHeader("Location", "/frontbookv2.html");
+						response.end();
 					}
 					
 					
@@ -71,12 +74,7 @@ console.log('Cookie: ', request.headers.cookie);
 				response.end();
 				
 			}
-			else
-			{
-				 response.statusCode = 302;
-				 response.setHeader("Location", "/frontbookv2");
-				 response.end();
-			}
+			
 		}
 		catch(e)
 		{
