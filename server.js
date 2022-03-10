@@ -2,9 +2,11 @@ const http=require('http');
 const fs= require('fs');
 const server=http.createServer(function(request,response){
 console.log('Cookie: ', request.cookies);
-if(request.cookies=== undefined)
+if(request.cookies=== undefined && request.url!='/')
 {
-	console.log('you lose');
+     console.log('you lose');
+	 response.statusCode = 302;
+     response.setHeader("Location", "/");
 	
 }	
 if (request.url==='/'){
