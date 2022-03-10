@@ -1,7 +1,7 @@
 const http=require('http');
 const fs= require('fs');
 const server=http.createServer(function(request,response){
-console.log('Cookie: ', request.headers.cookie);
+console.log('Cookie: ', request.headers.cookie.login);
 	if(request.headers.cookie=== undefined && !request.url.includes('js')&& !request.url.includes('css') &&request.url!='/')
 	{
 		 console.log('you lose');
@@ -42,7 +42,7 @@ console.log('Cookie: ', request.headers.cookie);
 			   {
 					var passwordU = users[property].passwordU;
 					var login = users[property].login;
-					if(data.password===passwordU&&login===data.login)
+					if(request.headers.cookie.password===passwordU&&login===request.headers.cookie.login)
 					{
 						found=true;
 						break;
