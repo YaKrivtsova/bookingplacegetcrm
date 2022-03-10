@@ -33,14 +33,7 @@ console.log('Cookie: ', request.headers.cookie);
 	else if(request.url==='/getUser')
 	{
 		console.log('getUserInfo');
-		var post="";
-		request.on('data', function (chunk) {// Через функцию мониторинга событий данных req, всякий раз, когда данные тела запроса получены, они добавляются в переменную post
-        post += chunk;
-		});
-		request.on ('end', function () {// После срабатывания конечного события сообщение анализируется в реальный формат запроса POST через querystring.parse, а затем возвращается клиенту.
-		console.log(post);
-		});
-		var data=JSON.parse(post);
+		
 		try{
 			const text=fs.readFileSync('users.txt');
 			var users= JSON.parse(text).users;
