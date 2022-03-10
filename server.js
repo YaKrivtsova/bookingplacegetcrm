@@ -62,7 +62,7 @@ console.log('Cookie: ', request.headers.cookie);
 						console.log("sucsess");
 						found=true;
 						response.statusCode = 302;
-						response.setHeader("Location", "/frontbookv2.html");
+						response.end("/frontbookv2.html");
 						break;
 					}
 					
@@ -85,7 +85,7 @@ console.log('Cookie: ', request.headers.cookie);
 		
 		}
 	}
-    if(request.url.startsWith("/")){
+    else if(request.url.startsWith("/")){
          
         // получаем путь после слеша
         var filePath = request.url.substr(1);
