@@ -43,11 +43,11 @@ console.log('Cookie: ', request.headers.cookie);
 			{
 				if(cookies[i].includes('login'))
 				{
-					var putLogin=cookies[i].splice('=')[1];
+					var putLogin=cookies[i].split('=')[1];
 				}
 				if(cookies[i].includes('password'))
 				{
-					var putPass=cookies[i].splice('=')[1];
+					var putPass=cookies[i].split('=')[1];
 				}
 			}
 			console.log(putLogin+" "+putPass);
