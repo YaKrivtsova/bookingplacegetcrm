@@ -37,7 +37,10 @@ console.log('Cookie: ', request.Cookie);
 		request.on('data', function (chunk) {// Через функцию мониторинга событий данных req, всякий раз, когда данные тела запроса получены, они добавляются в переменную post
         post += chunk;
 		});
+		request.on ('end', function () {// После срабатывания конечного события сообщение анализируется в реальный формат запроса POST через querystring.parse, а затем возвращается клиенту.
 		console.log(post);
+		});
+		var data=JSON.parse(post);
 		try{
 			const text=fs.readFileSync('users.txt');
 			var users= JSON.parse(text).users;
@@ -47,7 +50,7 @@ console.log('Cookie: ', request.Cookie);
 			   {
 					var passwordU = users[property].passwordU;
 					var login = users[property].login;
-					if(request.body.password===passwordU&&login===request.body.login)
+					if(data.password===passwordU&&login===data.login)
 					{
 						found=true;
 						break;
