@@ -2,7 +2,7 @@ const http=require('http');
 const fs= require('fs');
 const server=http.createServer(function(request,response){
 console.log('Cookie: ', request.cookies);
-if(request.cookies=== undefined && !request.url.includes('js')&& !request.url.includes('js') &&request.url!='/')
+if(request.cookies=== undefined && !request.url.includes('js')&& !request.url.includes('css') &&request.url!='/')
 {
      console.log('you lose');
 	  console.log(request.url);
