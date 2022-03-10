@@ -42,7 +42,7 @@ console.log('Cookie: ', request.headers.cookie);
 			   {
 					var passwordU = users[property].passwordU;
 					var login = users[property].login;
-					if(request.headers.cookie.password===passwordU&&login===request.headers.cookie.login)
+					if(request.headers.cookie.match(/password=(.+?)(;|$)/)===passwordU&&login===request.headers.cookie.match(/login=(.+?)(;|$)/))
 					{
 						found=true;
 						break;
@@ -59,7 +59,6 @@ console.log('Cookie: ', request.headers.cookie);
 			else
 			{
 				 response.statusCode = 302;
-				 response.cookies="login="+putLogin+";password="+putPass+" path=/;";
 				 response.setHeader("Location", "/frontbookv2");
 				 response.end();
 			}
