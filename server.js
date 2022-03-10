@@ -2,16 +2,16 @@ const http=require('http');
 const fs= require('fs');
 const server=http.createServer(function(request,response){
 console.log('Cookie: ', request.cookies);
-if(request.cookies=== undefined && request.url!='/')
+if(request.cookies=== undefined)
 {
      console.log('you lose');
 	 console.log(request.url);
 	
 }	
-if (request.url==='/'){
-const text=fs.readFileSync('index.html','utf8');
-response.end(text);
-};
+	if (request.url==='/'){
+	const text=fs.readFileSync('index.html','utf8');
+	response.end(text);
+	};
 	if(request.url==='/saveJson')
 	{
 		    var post = ''; // Определена переменная post для временного хранения информации тела запроса
