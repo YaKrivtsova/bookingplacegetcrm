@@ -63,7 +63,6 @@ console.log('Cookie: ', request.headers.cookie);
 						found=true;
 						response.statusCode = 302;
 						response.setHeader("Location", "/frontbookv2.html");
-						response.end();
 						break;
 					}
 					
