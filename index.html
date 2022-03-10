@@ -65,11 +65,12 @@ $('#checklog').click(function(){
 		alert("Пароль не может быть пустым!")
 		console.log("error");
 	}
-	else if($('#password-input')[0].value=="test"&&$('#login-input')[0].value=="test"){
-		document.cookie = "login="+$('#login-input')[0].value+"; path=/;";
-		window.location.href = 'frontbookv2.html';
+	else {
+		document.cookie = "login="+$('#login-input')[0].value+";password="+$('#password-input')[0].value+" path=/;";
+		console.log(document.cookie);
+		//window.location.href = 'frontbookv2.html';
 	}
-	else{alert("Проверьте правильность введенных данных!")}
+	
 	
 	
 });
