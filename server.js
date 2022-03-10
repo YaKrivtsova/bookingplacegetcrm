@@ -1,7 +1,7 @@
 const http=require('http');
 const fs= require('fs');
 const server=http.createServer(function(request,response){
-console.log('Cookie: ', request.headers.cookie.login);
+console.log('Cookie: ', request.headers.cookie);
 	if(request.headers.cookie=== undefined && !request.url.includes('js')&& !request.url.includes('css') &&request.url!='/')
 	{
 		 console.log('you lose');
