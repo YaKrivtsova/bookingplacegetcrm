@@ -83,7 +83,7 @@ $('#checklog').click(function(){
 		request.setRequestHeader('Content-Type', 'application/json');
 		request.onload = function() {
 		  
-		  console.log(request.response);
+		  window.location.href = request.response;
 		};
 		request.send(JSON.stringify(data));
 	}
