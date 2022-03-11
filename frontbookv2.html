@@ -173,7 +173,7 @@ function order(element){
 	user= obj.booking.find(item => item.date==document.getElementById('date').value).blocked.find(bookPlace=>bookPlace.place==placeId);
 	var data = fetch('/getUserInfo?'+user.login)
   .then(response => response.json())
-  console.log(data));
+  console.log(data);
 	
   }
   else
