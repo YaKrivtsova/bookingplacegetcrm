@@ -168,7 +168,10 @@ function order(element){
   var text="";
   if(element.style.fill=="red")
   {
+  
 	text='К сожалению, место '+placeId+' занято. Выберите другое место или другую дату';
+	console.log(obj.booking.find(item => item.date==document.getElementById('date').value).blocked.find(bookPlace=>bookPlace.place==placeId ))
+	
   }
   else
   {
