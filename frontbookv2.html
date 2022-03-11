@@ -184,7 +184,6 @@ function order(element){
   if(element.style.fill=="red")
   {
    var json="";
-	text='К сожалению, место '+placeId+' занято. Выберите другое место или другую дату';
 	user= obj.booking.find(item => item.date==document.getElementById('date').value).blocked.find(bookPlace=>bookPlace.place==placeId);
 	 async function start() 
 	 {
@@ -195,8 +194,8 @@ function order(element){
 		  $('#exampleModal').modal('show');
 		  $(document.getElementById('FIO')).html(json.firstName+" "+json.lastName);
 		  $(document.getElementById('phone')).html(json.phone);
-		  $(document.getElementById('skype')).html(json.phone);
-		  $(document.getElementById('skype')).src="/img/"+json.pic;
+		  $(document.getElementById('skype')).html(json.skype);
+		  $(document.getElementById('conPic')).src="/img/"+json.pic;
 		}
 		return json;
 	}
