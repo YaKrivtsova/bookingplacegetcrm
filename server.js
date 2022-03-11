@@ -92,7 +92,7 @@ console.log('Cookie: ', request.headers.cookie);
 		console.log(login);
 		const text=fs.readFileSync('users.txt');
 		var users= JSON.parse(text).users;
-		let user = users.find(item =>item.log==login);
+		let user = users.find(item =>item.login==login);
 		user.password=null;
 		response.end(JSON.stringify(user));
 	}
