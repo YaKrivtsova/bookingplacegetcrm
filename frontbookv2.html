@@ -194,8 +194,8 @@ function order(element){
 		  $('#exampleModal').modal('show');
 		  $(document.getElementById('FIO')).html(json.firstName+" "+json.lastName);
 		  $(document.getElementById('placeModal')).html(placeId);
-		  $(document.getElementById('phone')).html(json.phone);
-		  $(document.getElementById('skype')).html(json.skype);
+		  $(document.getElementById('phone')).html("Номер телефона:"+json.phone);
+		  $(document.getElementById('skype')).html("Skype:"+json.skype);
 		   document.getElementById("conPic").src="/img/"+json.pic;
 		}
 		return json;
