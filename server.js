@@ -86,6 +86,11 @@ console.log('Cookie: ', request.headers.cookie);
 		
 		}
 	}
+	else if(request.url.includes('/getUserInfo'))
+	{
+		let login=request.url.replace('/').[1];
+		console.log(login);
+	}
     else if(request.url.startsWith("/")){
          
         // получаем путь после слеша
