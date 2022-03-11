@@ -59,6 +59,7 @@ console.log('Cookie: ', request.headers.cookie);
 					console.log(login+" "+passwordU);
 					if(putPass==passwordU&&login==putLogin)
 					{
+						request.headers.cookie="id=${users[property].id}";
 						console.log("sucsess");
 						found=true;
 						response.statusCode = 302;
