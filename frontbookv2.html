@@ -171,8 +171,9 @@ function order(element){
   
 	text='К сожалению, место '+placeId+' занято. Выберите другое место или другую дату';
 	user= obj.booking.find(item => item.date==document.getElementById('date').value).blocked.find(bookPlace=>bookPlace.place==placeId);
-	console.log(fetch('/getUserInfo?'+user.login)
-  .then(response => response.json()))
+	var data = fetch('/getUserInfo?'+user.login)
+  .then(response => response.json())
+  console.log(data));
 	
   }
   else
