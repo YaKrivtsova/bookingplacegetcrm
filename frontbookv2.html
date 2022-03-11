@@ -193,9 +193,10 @@ function order(element){
 		  json = await response.json();
 		  $('#exampleModal').modal('show');
 		  $(document.getElementById('FIO')).html(json.firstName+" "+json.lastName);
+		  $(document.getElementById('placeModal')).html(placeId);
 		  $(document.getElementById('phone')).html(json.phone);
 		  $(document.getElementById('skype')).html(json.skype);
-		  $(document.getElementById('conPic')).src="/img/"+json.pic;
+		   document.getElementById("conPic").src"/img/"+json.pic;
 		}
 		return json;
 	}
