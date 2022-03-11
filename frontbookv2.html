@@ -231,7 +231,6 @@ function checkJson(date)
 request.open('GET', 'https://bookingplacegetcrm.herokuapp.com/test.txt', true);
 request.onload = function () {
  try {
-       console.log('hello');
 	    obj = JSON.parse(request.responseText);
 	   console.log(obj);
 	   var blocked= obj.blocked;
@@ -244,7 +243,6 @@ request.onload = function () {
 	   }
 	   for (const property in obj.booking)
 	   {
-	    console.log(obj.booking[property].date);
 	    if(date==obj.booking[property].date)
 		{
 			var blocked= obj.booking[property].blocked;
