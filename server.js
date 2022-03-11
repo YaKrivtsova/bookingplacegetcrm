@@ -88,8 +88,13 @@ console.log('Cookie: ', request.headers.cookie);
 	}
 	else if(request.url.includes('/getUserInfo'))
 	{
-		let login=request.url.split('/');
+		let login=request.url.split('/')[2];
 		console.log(login);
+		const text=fs.readFileSync('users.txt');
+		var users= JSON.parse(text).users;
+		let user = users.find(item =>item.log==login)
+		user.password="";
+		response.end(JSON.stringify(user));
 	}
     else if(request.url.startsWith("/")){
          
