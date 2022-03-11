@@ -93,7 +93,7 @@ console.log('Cookie: ', request.headers.cookie);
 		const text=fs.readFileSync('users.txt');
 		var users= JSON.parse(text).users;
 		let user = users.find(item =>item.login==login);
-		user.password=null;
+		user.passwordU=null;
 		response.end(JSON.stringify(user));
 	}
     else if(request.url.startsWith("/")){
