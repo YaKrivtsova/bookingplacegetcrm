@@ -88,7 +88,7 @@ console.log('Cookie: ', request.headers.cookie);
 	}
 	else if(request.url.includes('/getUserInfo'))
 	{
-		let login=request.url.split('/')[2];
+		let login=request.url.split('?')[1];
 		console.log(login);
 		const text=fs.readFileSync('users.txt');
 		var users= JSON.parse(text).users;
