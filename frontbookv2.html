@@ -145,7 +145,22 @@
         </button>
       </div>
       <div class="modal-body">
-		<div id="placenum"style="display:inline-block"></div>
+		<div id="placenum"style="display:inline-block">
+		К сожалению, место <span id="placeModal"></span> занял(а) <span id="FIO"></span>. 
+		<p>
+			<a class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Карточка контакта</a>
+		</p>
+		<div class="row">
+		  <div class="col">
+			<div class="collapse multi-collapse" id="multiCollapseExample1">
+			  <div class="card card-body">
+				<span id="phone"></span>
+				<span id="skype"></span>
+				<img id="conPic" src="/" alt="Girl in a jacket" width="500" height="600">
+			  </div>
+			</div>
+		  </div>
+		</div>
       </div>
       <div class="modal-footer">
         <button type="button"style="display:inline-block;width: 47%;" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
@@ -178,8 +193,10 @@ function order(element){
 		{ 
 		  json = await response.json();
 		  $('#exampleModal').modal('show');
-		  text='К сожалению, место '+placeId+' занято. Выберите другое место или другую дату <img src="img/'+json.pic+'" alt="Girl in a jacket" width="500" height="600">';
-		  $(document.getElementById('placenum')).html(text)
+		  $(document.getElementById('FIO')).html(json.firstName+" "+json.lastName);
+		  $(document.getElementById('phone')).html(json.phone);
+		  $(document.getElementById('skype')).html(json.phone);
+		  $(document.getElementById('skype')).src="/img/"+json.pic;
 		}
 		return json;
 	}
